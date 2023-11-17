@@ -2,7 +2,8 @@ name: Daily Python Script
 
 on:
   schedule:
-    - cron: '21 16 * * *'  # 每天下午 16:21（UTC 时间）执行
+    - cron: '30 16 * * *'  # 每天下午 16:30（UTC 时间）执行
+  workflow_dispatch:
 
 jobs:
   run_script:
