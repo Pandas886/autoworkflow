@@ -1,0 +1,21 @@
+name: Daily Python Script
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # 每天凌晨执行
+
+jobs:
+  run_script:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'  # 选择所需的 Python 版本
+
+    - name: Run Python script
+      run: python zeabur.py  # 替换为你的 Python 脚本的路径
