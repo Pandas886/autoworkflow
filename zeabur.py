@@ -60,3 +60,33 @@ print(data.decode("utf-8"))
 # response = requests.post(url, headers=headers, json=data)
 #
 # print(response.text)
+
+
+url = 'link-ai.tech'
+path = '/api/chat/web/app/user/sign/in'
+
+# linkAI签到
+headers = {
+    'Accept': 'application/json, text/plain, */*',
+    'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6',
+    'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI5NTg3IiwiaWF0IjoxNzAwMjA0NjAwLCJleHAiOjE3MDA4MDk0MDB9.c3TSsYJ7HL2o00AfJz_OjFxAPoHuHO38tMzStc9IveU_NX6ngIh3eXQ8or118gOxvidjk1qT9hceUADNFd5xeg',
+    'Connection': 'keep-alive',
+    'Cookie': '_gcl_au=1.1.1397172404.1700197116',
+    'Referer': 'https://link-ai.tech/console/account',
+    'Sec-Fetch-Dest': 'empty',
+    'Sec-Fetch-Mode': 'cors',
+    'Sec-Fetch-Site': 'same-origin',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0',
+    'sec-ch-ua': '"Microsoft Edge";v="119", "Chromium";v="119", "Not?A_Brand";v="24"',
+    'sec-ch-ua-mobile': '?0',
+    'sec-ch-ua-platform': 'Windows',
+}
+
+conn = http.client.HTTPSConnection(url)
+conn.request('GET', path, headers=headers)
+
+response = conn.getresponse()
+data = response.read()
+
+print(data.decode())
+conn.close()
