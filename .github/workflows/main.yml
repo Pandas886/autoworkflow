@@ -20,3 +20,5 @@ jobs:
 
     - name: Run Python script
       run: python zeabur.py  # 替换为你的 Python 脚本的路径
+    - name: Run Python script2
+      run: python aliyun.py  # 替换为你的 Python 脚本的路径
