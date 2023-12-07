@@ -2,7 +2,7 @@ import requests
 import time
 import json
 
-refresh_token = "53090c2a0b8c4b8680587c1e042e4afc"
+refresh_token = "20505a7ec3bb4f8a9a9c960b170fab27"
 
 data = requests.post("https://auth.aliyundrive.com/v2/account/token",
                      data=json.dumps({
@@ -52,7 +52,7 @@ data2 = requests.post(url, headers=headers, json=data)
 data2 = json.loads(data2.text)
 signin_count = data2['result']['signInCount']
 
-# time.sleep(3000)
+time.sleep(3000)
 
 # data3 = requests.post(
 #     "https://member.aliyundrive.com/v1/activity/sign_in_reward?_rx-s=mobile",
